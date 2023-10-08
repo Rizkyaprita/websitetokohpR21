@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko HP R21</title>
+    <style>
+        /* Gaya CSS Anda dapat ditempatkan di sini */
+      <  body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #593434; /* Warna header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 36px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #E6E6FA; /* Warna produk */
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .product h3 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #FF5733; /* Warna judul produk */
+        }
+        .product p {
+            font-size: 18px;
+            color: #333;
+        }
+        .product button {
+            background-color: #3369ff; /* Warna tombol */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #28A745; /* Warna tombol saat dihover */
+        }
+        /* Gaya menu */
+        nav {
+            background-color: #333;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+        .menu-images {
+            margin-top: 20px;
+        }
+        .menu-images img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Toko HP R21</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Produk</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Daftar HP Tersedia</h2>
+        <div class="menu-images">
+            <!-- Menu gambar HP akan dimuat di sini -->
+            <img src="https://awsimages.detik.net.id/community/media/visual/2023/09/13/iphone-15-2_169.jpeg?w=600&q=90" alt="iPhone 15 PRO MAX">
+            <img src="https://inisumedang.com/wp-content/uploads/2022/11/Screenshot_2022-11-26-15-43-44-12_1c337646f29875672b5a61192b9010f9.jpg" alt="Samsung Galaxy S21">
+            <img src="https://cdn0-production-images-kly.akamaized.net/BWEskHxA_wrC23Yimm2KuSSFXJU=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4079742/original/079277100_1657026342-ROG_Phone_6_dan_ROG_Phone_6_Pro_Diumumkan.jpg" alt="Google Pixel 6">
+            <!-- Tambahkan gambar-gambar produk lainnya di sini -->
+        </div>
+        <div id="product-list">
+            <!-- Daftar produk HP akan dimuat di sini menggunakan JavaScript -->
+        </div>
+    </div>
+    <script>
+        // JavaScript Anda dapat ditempatkan di sini
+        const products = [
+            { name: 'iPhone 15 PRO MAX', price: 22000000, image: 'https://awsimages.detik.net.id/community/media/visual/2023/09/13/iphone-15-2_169.jpeg?w=600&q=90' },
+            { name: 'Samsung Galaxy S21', price: 11000000, image: 'https://inisumedang.com/wp-content/uploads/2022/11/Screenshot_2022-11-26-15-43-44-12_1c337646f29875672b5a61192b9010f9.jpg' },
+            { name: 'Asus Phone 6 PRO', price: 19000000, image: 'https://cdn0-production-images-kly.akamaized.net/BWEskHxA_wrC23Yimm2KuSSFXJU=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4079742/original/079277100_1657026342-ROG_Phone_6_dan_ROG_Phone_6_Pro_Diumumkan.jpg' },
+            // Tambahkan produk lainnya di sini
+        ];
+
+        const productList = document.getElementById('product-list');
+
+        function displayProducts() {
+            let html = '';
+            products.forEach(product => {
+                html += `
+                    <div class="product">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>Harga: Rp ${product.price.toLocaleString()}</p>
+                        <button>Beli</button>
+                    </div>
+                `;
+            });
+            productList.innerHTML = html;
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>
